@@ -20,20 +20,20 @@ const Home = () => {
         <div className="mb-12">
           <div className="w-20 h-20 rounded-full flex items-center justify-center text-white font-extrabold text-3xl shadow-2xl border-4 border-blue-900/20 hover:scale-110 transition-transform duration-300 cursor-pointer"
             style={{ background: PRIMARY_BLUE, borderColor: PRIMARY_BLUE }}>
-            FC
+            BC
           </div>
         </div>
 
         {/* Main headline */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-center mb-6 leading-tight">
-          <span className="text-white">Fresh Cuts.</span>
+          <span className="text-white">BeyondCuts</span>
           <br />
-          <span style={{ color: PRIMARY_BLUE }}>Clean Vibes.</span>
+          <span style={{ color: PRIMARY_BLUE }}>Fresh Cuts. Clean Vibes.</span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 text-center mb-12 max-w-2xl leading-relaxed font-light">
-          Book your next haircut with confidence.
+          Book your next haircut with confidence at <span className="font-bold" style={{ color: PRIMARY_BLUE }}>BeyondCuts</span>.
         </p>
 
         {/* Book a Cut Button */}
