@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import haircut1 from "../assets/haircut1.jpg";
 
 const PRIMARY_BLUE = "#0033A0";
@@ -39,10 +39,7 @@ const Home = () => {
 
         {/* Book a Cut Button */}
         <Link
-          to="booking"
-          smooth={true}
-          duration={800}
-          offset={-80}
+          to="/booking"
           className="inline-block py-4 px-10 rounded-full text-white font-bold text-xl shadow-2xl transition-all duration-300 cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-800/50 transform hover:scale-105"
           style={{
             background: PRIMARY_BLUE,
