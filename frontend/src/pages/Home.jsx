@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
+import haircut1 from "../assets/haircut1.jpg";
 
 const PRIMARY_BLUE = "#0033A0";
 const HOVER_BLUE = "#1a4db3"; // Tailwind's blue-700 is close
@@ -76,7 +77,14 @@ const Home = () => {
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
+            {/* First image: real haircut photo */}
+            <img
+              src={haircut1}
+              alt="Haircut 1"
+              className="rounded-lg object-cover shadow-md w-full h-64 hover:scale-105 transition-transform duration-300"
+            />
+            {/* Remaining placeholders */}
+            {[2, 3, 4, 5, 6].map((item) => (
               <div
                 key={item}
                 className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg border-2 hover:border-blue-700 transition-all duration-300 cursor-pointer group"
@@ -136,7 +144,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Section */}
+      {/* About Me Section (formerly Why) */}
       <section
         id="why"
         className="min-h-screen w-full flex flex-col justify-center items-center px-6 py-20"
@@ -148,25 +156,19 @@ const Home = () => {
         <div className="max-w-4xl w-full text-center">
           {/* Section Header */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6">
-            Why I <span style={{ color: PRIMARY_BLUE }}>Cut Hair</span>
+            About <span style={{ color: PRIMARY_BLUE }}>Me</span>
           </h2>
-          
-          {/* Mission Content */}
+          {/* About Content */}
           <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border-2 max-w-3xl mx-auto"
             style={{ borderColor: PRIMARY_BLUE }}>
             <div className="text-center">
-              <div className="text-6xl mb-6" style={{ color: PRIMARY_BLUE }}>💈</div>
-              <h3 className="text-2xl font-bold text-white mb-6">My Mission & Passion</h3>
+              <div className="text-6xl mb-6" style={{ color: PRIMARY_BLUE }}>👤</div>
+              <h3 className="text-2xl font-bold text-white mb-6">Student Barber & Community Builder</h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                I believe that a great haircut is more than just trimming hair – it's about confidence, 
-                self-expression, and feeling your best. Every client who sits in my chair becomes part 
-                of my story, and I take pride in delivering not just a cut, but an experience that 
-                leaves you feeling fresh, confident, and ready to take on the world.
+                Hey, I'm Jon Michael Glenn—a student barber at Dillard University and the founder of <span className="font-bold" style={{ color: PRIMARY_BLUE }}>BeyondCuts</span>. My passion goes beyond just cutting hair; it's about building community, creating bonds, and helping people feel their best. Every client is more than just a haircut—it's a connection and a chance to make a positive impact.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                With years of experience and a passion for the craft, I've dedicated myself to mastering 
-                the art of cutting hair. From classic styles to modern trends, I'm here to help you 
-                discover and maintain the look that represents who you are.
+                While balancing my studies and perfecting my craft, I'm dedicated to growing BeyondCuts into a brand that stands for excellence, trust, and real relationships. Whether you're a fellow student or a new face, I'm here to help you look sharp and feel confident—one cut at a time.
               </p>
             </div>
           </div>
