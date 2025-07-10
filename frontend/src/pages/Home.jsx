@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-scroll";
 
+const PRIMARY_BLUE = "#0033A0";
+const HOVER_BLUE = "#1a4db3"; // Tailwind's blue-700 is close
+
 const Home = () => {
   return (
     <div className="w-full">
@@ -15,7 +18,8 @@ const Home = () => {
       >
         {/* Logo placeholder */}
         <div className="mb-12">
-          <div className="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center text-white font-extrabold text-3xl shadow-2xl border-4 border-green-300/20 hover:scale-110 transition-transform duration-300 cursor-pointer">
+          <div className="w-20 h-20 rounded-full flex items-center justify-center text-white font-extrabold text-3xl shadow-2xl border-4 border-blue-900/20 hover:scale-110 transition-transform duration-300 cursor-pointer"
+            style={{ background: PRIMARY_BLUE, borderColor: PRIMARY_BLUE }}>
             FC
           </div>
         </div>
@@ -24,7 +28,7 @@ const Home = () => {
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-center mb-6 leading-tight">
           <span className="text-white">Fresh Cuts.</span>
           <br />
-          <span className="text-green-400">Clean Vibes.</span>
+          <span style={{ color: PRIMARY_BLUE }}>Clean Vibes.</span>
         </h1>
 
         {/* Subheadline */}
@@ -38,10 +42,13 @@ const Home = () => {
           smooth={true}
           duration={800}
           offset={-80}
-          className="inline-block py-4 px-10 rounded-full bg-green-500 hover:bg-green-400 text-black font-bold text-xl shadow-2xl transition-all duration-300 cursor-pointer focus:outline-none focus:ring-4 focus:ring-green-400/50 transform hover:scale-105"
+          className="inline-block py-4 px-10 rounded-full text-white font-bold text-xl shadow-2xl transition-all duration-300 cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-800/50 transform hover:scale-105"
           style={{
-            boxShadow: "0 0 20px rgba(34, 197, 94, 0.3)",
+            background: PRIMARY_BLUE,
+            boxShadow: `0 0 20px ${PRIMARY_BLUE}33`,
           }}
+          onMouseOver={e => e.currentTarget.style.background = HOVER_BLUE}
+          onMouseOut={e => e.currentTarget.style.background = PRIMARY_BLUE}
         >
           Book a Cut
         </Link>
@@ -60,7 +67,7 @@ const Home = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6">
-              <span className="text-green-400">Gallery</span> of Cuts
+              <span style={{ color: PRIMARY_BLUE }}>Gallery</span> of Cuts
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Check out some of my latest work and transformations
@@ -72,11 +79,12 @@ const Home = () => {
             {[1, 2, 3, 4, 5, 6].map((item) => (
               <div
                 key={item}
-                className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg border-2 border-green-500/20 hover:border-green-400/40 transition-all duration-300 cursor-pointer group"
+                className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg border-2 hover:border-blue-700 transition-all duration-300 cursor-pointer group"
+                style={{ borderColor: PRIMARY_BLUE }}
               >
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-6xl mb-4 text-green-400 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-6xl mb-4" style={{ color: PRIMARY_BLUE }}>
                       ✂️
                     </div>
                     <p className="text-gray-400 font-medium">Haircut #{item}</p>
@@ -101,21 +109,26 @@ const Home = () => {
         <div className="max-w-4xl w-full text-center">
           {/* Section Header */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6">
-            Book Your <span className="text-green-400">Appointment</span>
+            Book Your <span style={{ color: PRIMARY_BLUE }}>Appointment</span>
           </h2>
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
             Ready for a fresh cut? Schedule your appointment today and experience the difference.
           </p>
 
           {/* Booking Placeholder */}
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-green-500/20 max-w-2xl mx-auto">
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border-2 max-w-2xl mx-auto"
+            style={{ borderColor: PRIMARY_BLUE }}>
             <div className="text-center">
-              <div className="text-6xl mb-6 text-green-400">📅</div>
+              <div className="text-6xl mb-6" style={{ color: PRIMARY_BLUE }}>📅</div>
               <h3 className="text-2xl font-bold text-white mb-4">Scheduling System</h3>
               <p className="text-gray-300 mb-6">
                 Our online booking system is coming soon! For now, reach out directly to schedule your appointment.
               </p>
-              <button className="inline-block py-3 px-8 rounded-full bg-green-500 hover:bg-green-400 text-black font-bold text-lg transition-all duration-300 transform hover:scale-105">
+              <button className="inline-block py-3 px-8 rounded-full text-white font-bold text-lg transition-all duration-300 transform hover:scale-105"
+                style={{ background: PRIMARY_BLUE }}
+                onMouseOver={e => e.currentTarget.style.background = HOVER_BLUE}
+                onMouseOut={e => e.currentTarget.style.background = PRIMARY_BLUE}
+              >
                 Contact to Book
               </button>
             </div>
@@ -135,13 +148,14 @@ const Home = () => {
         <div className="max-w-4xl w-full text-center">
           {/* Section Header */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6">
-            Why I <span className="text-green-400">Cut Hair</span>
+            Why I <span style={{ color: PRIMARY_BLUE }}>Cut Hair</span>
           </h2>
           
           {/* Mission Content */}
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-green-500/20 max-w-3xl mx-auto">
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border-2 max-w-3xl mx-auto"
+            style={{ borderColor: PRIMARY_BLUE }}>
             <div className="text-center">
-              <div className="text-6xl mb-6 text-green-400">💈</div>
+              <div className="text-6xl mb-6" style={{ color: PRIMARY_BLUE }}>💈</div>
               <h3 className="text-2xl font-bold text-white mb-6">My Mission & Passion</h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
                 I believe that a great haircut is more than just trimming hair – it's about confidence, 
@@ -171,7 +185,7 @@ const Home = () => {
         <div className="max-w-4xl w-full text-center">
           {/* Section Header */}
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6">
-            Get In <span className="text-green-400">Touch</span>
+            Get In <span style={{ color: PRIMARY_BLUE }}>Touch</span>
           </h2>
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
             Ready for your next cut? Here's how to reach me.
@@ -180,39 +194,53 @@ const Home = () => {
           {/* Contact Info Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {/* Instagram */}
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border-2 border-green-500/20 hover:border-green-400/40 transition-all duration-300">
-              <div className="text-4xl mb-4 text-green-400">📱</div>
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border-2 hover:border-blue-700 transition-all duration-300"
+              style={{ borderColor: PRIMARY_BLUE }}>
+              <div className="text-4xl mb-4" style={{ color: PRIMARY_BLUE }}>📸</div>
               <h3 className="text-xl font-bold text-white mb-2">Instagram</h3>
-              <p className="text-gray-300 mb-4">@freshcuts_barber</p>
+              <p className="text-gray-300 mb-4">@joniiiglenn</p>
               <a 
-                href="#" 
-                className="inline-block py-2 px-4 rounded-full bg-green-500 hover:bg-green-400 text-black font-bold text-sm transition-all duration-300"
+                href="https://instagram.com/joniiiglenn" 
+                target="_blank" rel="noopener noreferrer"
+                className="inline-block py-2 px-4 rounded-full text-white font-bold text-sm transition-all duration-300"
+                style={{ background: PRIMARY_BLUE }}
+                onMouseOver={e => e.currentTarget.style.background = HOVER_BLUE}
+                onMouseOut={e => e.currentTarget.style.background = PRIMARY_BLUE}
               >
                 Follow Me
               </a>
             </div>
 
-            {/* Phone */}
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border-2 border-green-500/20 hover:border-green-400/40 transition-all duration-300">
-              <div className="text-4xl mb-4 text-green-400">📞</div>
-              <h3 className="text-xl font-bold text-white mb-2">Phone</h3>
-              <p className="text-gray-300 mb-4">(555) 123-4567</p>
+            {/* Email */}
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border-2 hover:border-blue-700 transition-all duration-300"
+              style={{ borderColor: PRIMARY_BLUE }}>
+              <div className="text-4xl mb-4" style={{ color: PRIMARY_BLUE }}>✉️</div>
+              <h3 className="text-xl font-bold text-white mb-2">Email</h3>
+              <p className="text-gray-300 mb-4">jonmichaelglenn@gmail.com</p>
               <a 
-                href="tel:5551234567" 
-                className="inline-block py-2 px-4 rounded-full bg-green-500 hover:bg-green-400 text-black font-bold text-sm transition-all duration-300"
+                href="mailto:jonmichaelglenn@gmail.com" 
+                className="inline-block py-2 px-4 rounded-full text-white font-bold text-sm transition-all duration-300"
+                style={{ background: PRIMARY_BLUE }}
+                onMouseOver={e => e.currentTarget.style.background = HOVER_BLUE}
+                onMouseOut={e => e.currentTarget.style.background = PRIMARY_BLUE}
               >
-                Call Now
+                Email Me
               </a>
             </div>
 
             {/* Location */}
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border-2 border-green-500/20 hover:border-green-400/40 transition-all duration-300">
-              <div className="text-4xl mb-4 text-green-400">📍</div>
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border-2 hover:border-blue-700 transition-all duration-300"
+              style={{ borderColor: PRIMARY_BLUE }}>
+              <div className="text-4xl mb-4" style={{ color: PRIMARY_BLUE }}>📍</div>
               <h3 className="text-xl font-bold text-white mb-2">Location</h3>
-              <p className="text-gray-300 mb-4">123 Barber Street<br />City, State 12345</p>
+              <p className="text-gray-300 mb-4">Dillard University<br />2601 Gentilly Blvd<br />New Orleans, LA 70122</p>
               <a 
-                href="#" 
-                className="inline-block py-2 px-4 rounded-full bg-green-500 hover:bg-green-400 text-black font-bold text-sm transition-all duration-300"
+                href="https://maps.app.goo.gl/2Qw2Qw2Qw2Qw2Qw2A" 
+                target="_blank" rel="noopener noreferrer"
+                className="inline-block py-2 px-4 rounded-full text-white font-bold text-sm transition-all duration-300"
+                style={{ background: PRIMARY_BLUE }}
+                onMouseOver={e => e.currentTarget.style.background = HOVER_BLUE}
+                onMouseOut={e => e.currentTarget.style.background = PRIMARY_BLUE}
               >
                 Get Directions
               </a>
